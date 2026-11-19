@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+    <meta name="description" content="Book Tracker: registra tus lecturas, mide tus sesiones, guarda tus citas y mantén tu racha. App gratuita para Android.">
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4338ca;
+            --primary-soft: #eef0ff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --bg: #f6f7fb;
+            --surface: #ffffff;
+            --border: #e5e7eb;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #a5b4fc;
+                --primary-soft: #1e1b4b;
+                --text: #e5e7eb;
+                --muted: #9ca3af;
+                --bg: #0f1115;
+                --surface: #171a21;
+                --border: #262a33;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+        a { color: var(--primary); }
+        .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+        header.hero { padding: 72px 0 48px; text-align: center; }
+        .hero img {
+            width: 96px; height: 96px; border-radius: 24px;
+            box-shadow: 0 12px 32px rgba(67, 56, 202, 0.25);
+        }
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2rem, 6vw, 2.8rem);
+            margin: 24px 0 8px;
+            letter-spacing: -0.5px;
+        }
+        .hero p.tagline { font-size: 1.15rem; color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--text); color: var(--bg);
+            padding: 14px 24px; border-radius: 14px;
+            font-weight: 600; text-decoration: none;
+        }
+        .btn:hover { opacity: 0.9; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            padding-bottom: 56px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+        }
+        .card .icon {
+            width: 40px; height: 40px; border-radius: 12px;
+            display: grid; place-items: center;
+            background: var(--primary-soft); color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .card .icon svg { width: 22px; height: 22px; }
+        .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+        .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0 40px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+        footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+        footer a { text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="wrap">
+            <img src="icon.png" alt="Icono de Book Tracker" width="96" height="96">
+            <h1>Book Tracker</h1>
+            <p class="tagline">Registra tus lecturas, mide tus sesiones, guarda las frases que te marcan y convierte la lectura en hábito.</p>
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.jabc.booktracker" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .5.5.8 1 .6l15.2-9.4c.4-.3.4-.9 0-1.2L5 2c-.5-.3-1 .1-1 .6z"/></svg>
+                Disponible en Google Play
+            </a>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="features" aria-label="Funciones">
+            <div class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M11 8v8M15 8v8"/></svg></div>
+                <h3>Añade libros en segundos</h3>
+                <p>Escanea el ISBN, búscalo por título o importa tu biblioteca de Goodreads.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></div>
+                <h3>Lee con foco</h3>
+                <p>Cronómetro de lectura, meta por sesión y widget para pausar desde la pantalla de inicio.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4H8.5c0 1.7 1 3 2.5 3.5V17c-3-.5-5-3-5-6.5V8a1 1 0 0 1 1-1zm7 0h4v4h-2.5c0 1.7 1 3 2.5 3.5V17c-3-.5-5-3-5-6.5V8a1 1 0 0 1 1-1z"/></svg></div>
+                <h3>Mis citas</h3>
+                <p>Guarda frases y notas con su página, márcalas como favoritas y compártelas como imagen.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2c1 3 4 4.5 4 8.5A4 4 0 0 1 8 10.5C8 8 10 7 10 5c2 1 2 3 2 3"/><path d="M6 14a6 6 0 0 0 12 0"/></svg></div>
+                <h3>Racha y reto anual</h3>
+                <p>Lee un poco cada día, ponte una meta de libros para el año y comparte tu año lector.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+                <h3>Estadísticas</h3>
+                <p>Páginas, tiempo de lectura, mapa de calor y tus logros, todo en un vistazo.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+                <h3>Tus datos, en tu teléfono</h3>
+                <p>Sin cuentas: todo se guarda en tu dispositivo, con bloqueo por huella y respaldos que tú controlas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© 2026 Jose Alejandro Buitrago Cardenas</span>
+            <span>
+                <a href="privacidad.html">Política de privacidad</a>
+                &nbsp;·&nbsp;
+                <a href="mailto:buitragocardenasjosealejandro@gmail.com">Contacto</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
